@@ -13,3 +13,10 @@ div > div{
 #greyTile {
     background-color: rgb(152, 151, 151);
 }
+
+#wrapper > div > img {
+    display: block;
+    width: 70%;
+    height: 70%;
+    margin: 12px auto;
+}
