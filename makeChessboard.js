@@ -23,20 +23,22 @@ function boardInit() {
     }
 }
 
-const tiles = $wrapper.children;
+const tiles = $wrapper.children
 
 function pawnInit() {
     for (i = 8; i < 16; i++) {  //흑 폰 세팅
-        const pawn = document.createElement('img');
-        pawn.setAttribute('src', 'images/black/pawn.jpg')
-        pawn.setAttribute('id', 'blackPawn');
-        tiles[i].appendChild(pawn);
+        const blackPawn = document.createElement('img');
+        blackPawn.setAttribute('src', 'images/black/pawn.jpg')
+        blackPawn.setAttribute('id', 'blackPawn');
+        blackPawn.setAttribute('class', 'blackTeam');
+        tiles[i].appendChild(blackPawn);
     }
     for (i = 48; i < 56; i++) {  //백 폰 세팅
-        const pawn = document.createElement('img');
-        pawn.setAttribute('src', 'images/white/pawn.jpg')
-        pawn.setAttribute('id', 'whitePawn');
-        tiles[i].appendChild(pawn);
+        const whitePawn = document.createElement('img');
+        whitePawn.setAttribute('src', 'images/white/pawn.jpg')
+        whitePawn.setAttribute('id', 'whitePawn');
+        whitePawn.setAttribute('class', 'whiteTeam');
+        tiles[i].appendChild(whitePawn);
     }
 }
 
@@ -44,11 +46,13 @@ function rookInit(n) {
     const blackRook = document.createElement('img');
     blackRook.setAttribute('src', 'images/black/rook.jpg')
     blackRook.setAttribute('id', 'blackRook');
+    blackRook.setAttribute('class', 'blackTeam');
     tiles[n].appendChild(blackRook);
 
     const whiteRook = document.createElement('img');
     whiteRook.setAttribute('src', 'images/white/rook.jpg')
     whiteRook.setAttribute('id', 'blackRook');
+    whiteRook.setAttribute('class', 'whiteTeam');
     tiles[n + 56].appendChild(whiteRook);
 }
 
@@ -56,11 +60,13 @@ function knightInit(n) {
     const blackKnight = document.createElement('img');
     blackKnight.setAttribute('src', 'images/black/Knight.jpg')
     blackKnight.setAttribute('id', 'blackKnight');
+    blackKnight.setAttribute('class', 'blackTeam');
     tiles[n].appendChild(blackKnight);
 
     const whiteKnight = document.createElement('img');
     whiteKnight.setAttribute('src', 'images/white/knight.jpg')
     whiteKnight.setAttribute('id', 'whiteKnight');
+    whiteKnight.setAttribute('class', 'whiteTeam');
     tiles[n + 56].appendChild(whiteKnight);
 }
 
@@ -68,11 +74,13 @@ function bishopInit(n) {
     const blackBishop = document.createElement('img');
     blackBishop.setAttribute('src', 'images/black/bishop.jpg')
     blackBishop.setAttribute('id', 'blackBishop');
+    blackBishop.setAttribute('class', 'blackTeam');
     tiles[n].appendChild(blackBishop);
 
     const whiteBishop = document.createElement('img');
     whiteBishop.setAttribute('src', 'images/white/bishop.jpg')
     whiteBishop.setAttribute('id', 'whiteBishop');
+    whiteBishop.setAttribute('class', 'whiteTeam');
     tiles[n + 56].appendChild(whiteBishop);
 }
 
@@ -80,11 +88,13 @@ function queenInit(n) {
     const blackQueen = document.createElement('img');
     blackQueen.setAttribute('src', 'images/black/queen.jpg')
     blackQueen.setAttribute('id', 'blackQueen');
+    blackQueen.setAttribute('class', 'blackTeam');
     tiles[n].appendChild(blackQueen);
 
     const whiteQueen = document.createElement('img');
     whiteQueen.setAttribute('src', 'images/white/queen.jpg')
     whiteQueen.setAttribute('id', 'whiteQueen');
+    whiteQueen.setAttribute('class', 'whiteTeam');
     tiles[n + 56].appendChild(whiteQueen);
 }
 
@@ -92,11 +102,13 @@ function kingInit(n) {
     const blackKing = document.createElement('img');
     blackKing.setAttribute('src', 'images/black/king.jpg')
     blackKing.setAttribute('id', 'blackKing');
+    blackKing.setAttribute('class', 'blackTeam');
     tiles[n].appendChild(blackKing);
 
     const whiteKing = document.createElement('img');
     whiteKing.setAttribute('src', 'images/white/king.jpg')
     whiteKing.setAttribute('id', 'whiteKing');
+    whiteKing.setAttribute('class', 'whiteTeam');
     tiles[n + 56].appendChild(whiteKing);
 }
 

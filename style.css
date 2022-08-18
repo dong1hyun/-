@@ -6,21 +6,32 @@
     border-collapse: none;
 }
 
-div > div{
+#wrapper>div {
     border: 1px solid #000;
+    position: relative;
 }
 
-#wrapper > div > div {  
+#wrapper>div>div {
+    position: absolute;
     background-color: aqua;
     border-radius: 50%;
+    height: 60px;
+    width: 60px;
     display: none;
+    border: none;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 50%;
 }
 
 #greyTile {
     background-color: rgb(152, 151, 151);
 }
 
-#wrapper > div > img {
+#wrapper>div>img {
     display: block;
     width: 70%;
     height: 70%;
