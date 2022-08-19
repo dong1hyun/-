@@ -1,4 +1,5 @@
 const $wrapper = document.querySelector('#wrapper');
+const tiles = $wrapper.children  //체스판 모든 칸들의 유사배열객체
 
 function boardInit() {
     let c = 0;
@@ -23,7 +24,7 @@ function boardInit() {
     }
 }
 
-const tiles = $wrapper.children
+
 
 function pawnInit() {
     for (i = 8; i < 16; i++) {  //흑 폰 세팅
@@ -51,7 +52,7 @@ function rookInit(n) {
 
     const whiteRook = document.createElement('img');
     whiteRook.setAttribute('src', 'images/white/rook.jpg')
-    whiteRook.setAttribute('id', 'blackRook');
+    whiteRook.setAttribute('id', 'whiteRook');
     whiteRook.setAttribute('class', 'whiteTeam');
     tiles[n + 56].appendChild(whiteRook);
 }
