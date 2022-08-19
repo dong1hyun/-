@@ -1,12 +1,11 @@
 const whiteRook = document.querySelectorAll('#whiteRook');
 const blackRook = document.querySelectorAll('#blackRook');
-console.log(whiteRook[0]);
 
 function whiteRookMove() {
     for (i = 0; i < whiteRook.length; i++) {
         whiteRook[i].onclick = function () {
             movingTarget = this;
-            const tileNum = this.parentElement.getAttribute('value');
+            const tileNum = +this.parentElement.getAttribute('value');
 
             secondClick(tileNum);
             if (clicked) {
@@ -18,7 +17,7 @@ function whiteRookMove() {
 
             let movingPoint = tileNum;
 
-            while ((+movingPoint + 1) % 8 != 0) {  //오른쪽 맨 끝 칸까지 한칸씩 이동
+            while ((movingPoint + 1) % 8 != 0) {  //오른쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint++;
                 if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
@@ -30,7 +29,7 @@ function whiteRookMove() {
                 tiles[movingPoint].firstElementChild.style.display = 'block';
             }
             movingPoint = tileNum;
-            while ((+movingPoint) % 8 != 0) {  //왼쪽 맨 끝 칸까지 한칸씩 이동
+            while ((movingPoint) % 8 != 0) {  //왼쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint--;
                 if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
@@ -53,8 +52,8 @@ function whiteRookMove() {
                 }
                 tiles[movingPoint].firstElementChild.style.display = 'block';
             }
-            movingPoint = +tileNum;
-            while(movingPoint + 8 >= 0) {
+            movingPoint = tileNum;
+            while(movingPoint + 8 < 64) {
                 movingPoint += 8;
                 if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
                     break;
@@ -76,7 +75,7 @@ function blackRookMove() {
     for (i = 0; i < blackRook.length; i++) {
         blackRook[i].onclick = function () {
             movingTarget = this;
-            const tileNum = this.parentElement.getAttribute('value');
+            const tileNum = +this.parentElement.getAttribute('value');
 
             secondClick(tileNum);
             if (clicked) {
@@ -88,7 +87,7 @@ function blackRookMove() {
 
             let movingPoint = tileNum;
 
-            while ((+movingPoint + 1) % 8 != 0) {  //오른쪽 맨 끝 칸까지 한칸씩 이동
+            while ((movingPoint + 1) % 8 != 0) {  //오른쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint++;
                 if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
@@ -100,7 +99,7 @@ function blackRookMove() {
                 tiles[movingPoint].firstElementChild.style.display = 'block';
             }
             movingPoint = tileNum;
-            while ((+movingPoint) % 8 != 0) {  //왼쪽 맨 끝 칸까지 한칸씩 이동
+            while ((movingPoint) % 8 != 0) {  //왼쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint--;
                 if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
@@ -123,8 +122,8 @@ function blackRookMove() {
                 }
                 tiles[movingPoint].firstElementChild.style.display = 'block';
             }
-            movingPoint = +tileNum;
-            while(movingPoint + 8 >= 0) {
+            movingPoint = tileNum;
+            while(movingPoint + 8 < 64) {
                 movingPoint += 8;
                 if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
                     break;
@@ -136,7 +135,7 @@ function blackRookMove() {
                 tiles[movingPoint].firstElementChild.style.display = 'block';
             }
 
-            clickedNum = +tileNum;
+            clickedNum = tileNum;
         }
     }
 }
