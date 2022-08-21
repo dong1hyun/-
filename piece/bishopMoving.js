@@ -19,10 +19,10 @@ function whiteBishopMove() {
 
             while ((movingPoint + 1) % 8 != 0 && movingPoint >= 8) {  //오른쪽 위 끝 칸까지 한 칸씩 이동
                 movingPoint -= 7;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -31,10 +31,10 @@ function whiteBishopMove() {
             movingPoint = tileNum;
             while ((movingPoint) % 8 != 0 && movingPoint >= 8) {  //왼쪽 위 칸까지 한 칸씩 이동
                 movingPoint -= 9;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -43,10 +43,10 @@ function whiteBishopMove() {
             movingPoint = tileNum;
             while((movingPoint + 1) % 8 != 0 && movingPoint <= 55) {  //오른쪽 아래 칸까지 한 칸씩 이동
                 movingPoint += 9;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }
@@ -55,10 +55,10 @@ function whiteBishopMove() {
             movingPoint = tileNum;
             while((movingPoint) % 8 != 0 && movingPoint <= 55) {
                 movingPoint += 7;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }
@@ -89,10 +89,10 @@ function blackBishopMove() {
 
             while ((movingPoint + 1) % 8 != 0 && movingPoint >= 8) {  //오른쪽 위 끝 칸까지 한 칸씩 이동
                 movingPoint -= 7;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -101,10 +101,10 @@ function blackBishopMove() {
             movingPoint = tileNum;
             while ((movingPoint) % 8 != 0 && movingPoint >= 8) {  //왼쪽 위 칸까지 한 칸씩 이동
                 movingPoint -= 9;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -113,10 +113,10 @@ function blackBishopMove() {
             movingPoint = tileNum;
             while((movingPoint + 1) % 8 != 0 && movingPoint <= 55) {  //오른쪽 아래 칸까지 한 칸씩 이동
                 movingPoint += 9;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }
@@ -125,10 +125,10 @@ function blackBishopMove() {
             movingPoint = tileNum;
             while((movingPoint) % 8 != 0 && movingPoint <= 55) {
                 movingPoint += 7;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }

@@ -19,10 +19,10 @@ function whiteRookMove() {
 
             while ((movingPoint + 1) % 8 != 0) {  //오른쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint++;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -31,10 +31,10 @@ function whiteRookMove() {
             movingPoint = tileNum;
             while ((movingPoint) % 8 != 0) {  //왼쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint--;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -43,10 +43,10 @@ function whiteRookMove() {
             movingPoint = tileNum;
             while(movingPoint - 8 >= 0) {
                 movingPoint -= 8;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }
@@ -55,10 +55,10 @@ function whiteRookMove() {
             movingPoint = tileNum;
             while(movingPoint + 8 < 64) {
                 movingPoint += 8;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }
@@ -89,10 +89,10 @@ function blackRookMove() {
 
             while ((movingPoint + 1) % 8 != 0) {  //오른쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint++;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -101,10 +101,10 @@ function blackRookMove() {
             movingPoint = tileNum;
             while ((movingPoint) % 8 != 0) {  //왼쪽 맨 끝 칸까지 한칸씩 이동
                 movingPoint--;
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam') {  //가다가 백팀을 만나면
                     break; //이동 불가
                 }
-                if (tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
+                if (tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam') {  //가다가 흑팀을 만나면
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break; //이동 불가
                 }
@@ -113,10 +113,10 @@ function blackRookMove() {
             movingPoint = tileNum;
             while(movingPoint - 8 >= 0) {
                 movingPoint -= 8;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }
@@ -125,10 +125,10 @@ function blackRookMove() {
             movingPoint = tileNum;
             while(movingPoint + 8 < 64) {
                 movingPoint += 8;
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'blackTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'blackTeam'){
                     break;
                 }
-                if(tiles[movingPoint].children[1] != null && tiles[movingPoint].children[1].getAttribute('class') == 'whiteTeam'){
+                if(tiles[movingPoint].children[2] != null && tiles[movingPoint].children[2].getAttribute('class') == 'whiteTeam'){
                     tiles[movingPoint].firstElementChild.style.display = 'block';
                     break;
                 }

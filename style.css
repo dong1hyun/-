@@ -11,7 +11,7 @@
     position: relative;
 }
 
-#wrapper>div>div {
+.movingPoint {
     position: absolute;
     background-color: aqua;
     border-radius: 50%;
@@ -27,6 +27,21 @@
     opacity: 50%;
 }
 
+.specialPoint {
+    position: absolute;
+    background-color: rgb(218, 45, 137);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: none;
+    border: none;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 50%;
+}
 #greyTile {
     background-color: rgb(152, 151, 151);
 }

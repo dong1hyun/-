@@ -1,5 +1,6 @@
 const $wrapper = document.querySelector('#wrapper');
 const tiles = $wrapper.children  //체스판 모든 칸들의 유사배열객체
+let count = 0;
 
 function boardInit() {
     let c = 0;
@@ -7,8 +8,12 @@ function boardInit() {
         for (j = 1; j <= 8; j++) {  //열
             const $div = document.createElement('div')
             const $div2 = document.createElement('div');
-            $div.appendChild($div2); 
+            const $div3 = document.createElement('div');
+            $div2.setAttribute('class', 'movingPoint');
+            $div3.setAttribute('class', 'specialPoint');
             $div.setAttribute('value', c++);
+            $div.appendChild($div2); 
+            $div.appendChild($div3);
             if (i % 2 != 0) {  //홀수 행일 때
                 if (j % 2 != 0) {  //홀수 열만 
                     $div.setAttribute('id', 'greyTile');   
@@ -32,6 +37,8 @@ function pawnInit() {
         blackPawn.setAttribute('src', 'images/black/pawn.jpg')
         blackPawn.setAttribute('id', 'blackPawn');
         blackPawn.setAttribute('class', 'blackTeam');
+        blackPawn.setAttribute('data-first-move', '-1');  //속성 값이 -1이면 첫 이동 전임, 1이면 첫 이동으로 한 칸 이동함, 2이면 첫 이동으로 두칸 이동함 
+        blackPawn.setAttribute('data-cur-move', '-1');  //가장 최근 이동한 턴
         tiles[i].appendChild(blackPawn);
     }
     for (i = 48; i < 56; i++) {  //백 폰 세팅
@@ -39,6 +46,8 @@ function pawnInit() {
         whitePawn.setAttribute('src', 'images/white/pawn.jpg')
         whitePawn.setAttribute('id', 'whitePawn');
         whitePawn.setAttribute('class', 'whiteTeam');
+        whitePawn.setAttribute('data-first-move', '-1');  //속성 값이 -1이면 첫 이동 전임, 1이면 첫 이동으로 한 칸 이동함, 2이면 첫 이동으로 두칸 이동함
+        whitePawn.setAttribute('data-cur-move', '-1');
         tiles[i].appendChild(whitePawn);
     }
 }
