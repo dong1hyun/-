@@ -57,12 +57,14 @@ function rookInit(n) {
     blackRook.setAttribute('src', 'images/black/rook.jpg')
     blackRook.setAttribute('id', 'blackRook');
     blackRook.setAttribute('class', 'blackTeam');
+    blackRook.setAttribute('data-first-move', '-1') //속성 값이 -1이면 첫 이동 전임, 1이면 이미 이동했음
     tiles[n].appendChild(blackRook);
 
     const whiteRook = document.createElement('img');
     whiteRook.setAttribute('src', 'images/white/rook.jpg')
     whiteRook.setAttribute('id', 'whiteRook');
     whiteRook.setAttribute('class', 'whiteTeam');
+    whiteRook.setAttribute('data-first-move', '-1') //속성 값이 -1이면 첫 이동 전임, 1이면 이미 이동했음
     tiles[n + 56].appendChild(whiteRook);
 }
 
@@ -113,12 +115,14 @@ function kingInit(n) {
     blackKing.setAttribute('src', 'images/black/king.jpg')
     blackKing.setAttribute('id', 'blackKing');
     blackKing.setAttribute('class', 'blackTeam');
+    blackKing.setAttribute('data-first-move', '-1') //속성 값이 -1이면 첫 이동 전임, 1이면 이미 이동했음
     tiles[n].appendChild(blackKing);
 
     const whiteKing = document.createElement('img');
     whiteKing.setAttribute('src', 'images/white/king.jpg')
     whiteKing.setAttribute('id', 'whiteKing');
     whiteKing.setAttribute('class', 'whiteTeam');
+    whiteKing.setAttribute('data-first-move', '-1') //속성 값이 -1이면 첫 이동 전임, 1이면 이미 이동했음
     tiles[n + 56].appendChild(whiteKing);
 }
 

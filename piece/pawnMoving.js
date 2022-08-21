@@ -31,10 +31,10 @@ function whitePawnMove() {
 
             //대각선 공격
             if (movingTarget.getAttribute('id') == 'blackPawn' || movingTarget.getAttribute('id') == 'whitePawn') {
-                if (tiles[tileNum - 7] != null && tiles[tileNum - 7].lastElementChild != null && tiles[tileNum - 7].lastElementChild.getAttribute('class') == 'blackTeam') {
+                if ((tileNum + 1) % 8 != 0 && tiles[tileNum - 7] != null && tiles[tileNum - 7].lastElementChild != null && tiles[tileNum - 7].lastElementChild.getAttribute('class') == 'blackTeam') {
                     tiles[tileNum - 7].firstElementChild.style.display = 'block';
                 }
-                if (tiles[tileNum - 9] != null && tiles[tileNum - 9].lastElementChild != null && tiles[tileNum - 9].lastElementChild.getAttribute('class') == 'blackTeam') {
+                if (tileNum % 8 != 0 && tiles[tileNum - 9] != null && tiles[tileNum - 9].lastElementChild != null && tiles[tileNum - 9].lastElementChild.getAttribute('class') == 'blackTeam') {
                     tiles[tileNum - 9].firstElementChild.style.display = 'block';
                 }
             }
@@ -88,11 +88,11 @@ function blackPawnMove() {
             }
 
             //대각선 공격
-            if (movingTarget.getAttribute('id') == 'blackPawn' || movingTarget.getAttribute('id') == 'whitePawn') {
-                if (tiles[tileNum + 7] != null && tiles[tileNum + 7].lastElementChild != null && tiles[tileNum + 7].lastElementChild.getAttribute('class') == 'whiteTeam') {
+            if (movingTarget.getAttribute('id') == 'blackPawn' || movingTarget.getAttribute('id') == 'whitePawn') { 
+                if (tileNum % 8 != 0 && tiles[tileNum + 7] != null && tiles[tileNum + 7].lastElementChild != null && tiles[tileNum + 7].lastElementChild.getAttribute('class') == 'whiteTeam') {
                     tiles[tileNum + 7].firstElementChild.style.display = 'block';
                 }
-                if (tiles[tileNum + 9] != null && tiles[tileNum + 9].lastElementChild != null && tiles[tileNum + 9].lastElementChild.getAttribute('class') == 'whiteTeam') {
+                if ((tileNum + 1) % 8 != 0 && tiles[tileNum + 9] != null && tiles[tileNum + 9].lastElementChild != null && tiles[tileNum + 9].lastElementChild.getAttribute('class') == 'whiteTeam') {
                     tiles[tileNum + 9].firstElementChild.style.display = 'block';
                 }
             }

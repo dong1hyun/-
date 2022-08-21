@@ -55,6 +55,12 @@ function whiteKingMove() {
                     tiles[tileNum + 9].firstElementChild.style.display = 'block';
                 }
             }
+            if(this.dataset.firstMove == '-1' && tiles[tileNum + 1].children[2] == null && tiles[tileNum + 2].children[2] == null){
+                tiles[tileNum + 2].children[1].style.display = 'block';   
+            }
+            if(this.dataset.firstMove == '-1' && tiles[tileNum - 1].children[2] == null && tiles[tileNum - 2].children[2] == null && tiles[tileNum - 3].children[2] == null){
+                tiles[tileNum - 2].children[1].style.display = 'block';   
+            }
             clickedNum = tileNum;
         }
     }
@@ -114,6 +120,13 @@ function blackKingMove() {
                 if (tiles[tileNum + 9].children[2] == null ||tiles[tileNum + 9].children[2] != null && tiles[tileNum + 9].children[2].getAttribute('class') == 'whiteTeam') {
                     tiles[tileNum + 9].firstElementChild.style.display = 'block';
                 }
+            }
+
+            if(this.dataset.firstMove == '-1' && tiles[tileNum + 1].children[2] == null && tiles[tileNum + 2].children[2] == null){
+                tiles[tileNum + 2].children[1].style.display = 'block';   
+            }
+            if(this.dataset.firstMove == '-1' && tiles[tileNum - 1].children[2] == null && tiles[tileNum - 2].children[2] == null && tiles[tileNum - 3].children[2] == null){
+                tiles[tileNum - 2].children[1].style.display = 'block';   
             }
 
             clickedNum = tileNum;
