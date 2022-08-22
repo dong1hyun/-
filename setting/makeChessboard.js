@@ -12,11 +12,11 @@ function boardInit() {
             $div2.setAttribute('class', 'movingPoint');
             $div3.setAttribute('class', 'specialPoint');
             $div.setAttribute('value', c++);
-            $div.appendChild($div2); 
+            $div.appendChild($div2);
             $div.appendChild($div3);
             if (i % 2 != 0) {  //홀수 행일 때
                 if (j % 2 != 0) {  //홀수 열만 
-                    $div.setAttribute('id', 'greyTile');   
+                    $div.setAttribute('id', 'greyTile');
                 }
             }
             else {  //짝수 행일 때
@@ -134,6 +134,29 @@ function pieceInit() {
     queenInit(3);
     kingInit(4);
 }
+
+(function () {
+    const $body = document.querySelector('body');
+    const $div = document.createElement('div');
+    $div.setAttribute('id', 'promotion');
+    function promotionSet(TYPE, type) {
+        const $div2 = document.createElement('div');
+        const $text = document.createElement('text');
+        const $a = document.createElement('a');
+        $div2.setAttribute('id', type);
+        $a.setAttribute('href', '#');
+        $a.textContent = TYPE;
+        $div2.appendChild($a);
+        $div.appendChild($div2);   
+    }
+    promotionSet('PROMOTION', 'title');
+    promotionSet('QUEEN', 'queen');
+    promotionSet('ROOK', 'rook');
+    promotionSet('BISHOP', 'bishop');
+    promotionSet('KNIGHT', 'knight');
+
+    $body.appendChild($div);
+})()
 
 boardInit();
 pieceInit();

@@ -29,16 +29,10 @@ for (i = 0; i < 64; i++) {
         if (movingTarget.getAttribute('class') == 'blackTeam' && this.parentElement.children[2] != null && this.parentElement.children[2].getAttribute('class') == 'whiteTeam') {
             movingPoint.parentElement.removeChild(this.parentElement.children[2]);
         }
-        if(movingTarget.getAttribute('id') == 'whitePawn' || movingTarget.getAttribute('id') == 'blackPawn'){
-            movingTarget.dataset.curMove = ++count; //몇 번째 턴인지 카운트
-            if(Math.abs(movingPoint.parentElement.getAttribute('value') - movingTarget.parentElement.getAttribute('value')) == 8){
-                movingTarget.dataset.firstMove = '1';
-            }
-            else if(Math.abs(movingPoint.parentElement.getAttribute('value') - movingTarget.parentElement.getAttribute('value')) == 16){
-                movingTarget.dataset.firstMove = '2';
-            }
-        }
-        if(movingTarget.getAttribute('id') == 'whiteKing' || movingTarget.getAttribute('id') == 'blackKing' || movingTarget.getAttribute('id') == 'whiteRook' || movingTarget.getAttribute('id') == 'blackRook'){
+        
+        pawnMove(movingPoint);
+        
+        if (movingTarget.getAttribute('id') == 'whiteKing' || movingTarget.getAttribute('id') == 'blackKing' || movingTarget.getAttribute('id') == 'whiteRook' || movingTarget.getAttribute('id') == 'blackRook' && movingTarget.dataset.firstMove == '-1') {  //움직이는 말이 킹이나 룩일 때
             movingTarget.dataset.firstMove = '1';
         }
         this.parentNode.appendChild(movingTarget);
@@ -50,32 +44,31 @@ for (i = 0; i < 64; i++) {
     specialPoint.onclick = function () {   //특수 이동 (앙파상, 케슬링)
         clearMovingPoint();
         if (movingTarget.getAttribute('class') == 'whiteTeam') {
-            if(+this.parentElement.getAttribute('value') + 8 < 64){
+            if (+this.parentElement.getAttribute('value') + 8 < 64) {
                 tiles[+this.parentElement.getAttribute('value') + 8].removeChild(tiles[+this.parentElement.getAttribute('value') + 8].children[2]);
             }
         }
         if (movingTarget.getAttribute('class') == 'blackTeam') {
-            if(+this.parentElement.getAttribute('value') - 8 >= 0){
+            if (+this.parentElement.getAttribute('value') - 8 >= 0) {
                 tiles[+this.parentElement.getAttribute('value') - 8].removeChild(tiles[+this.parentElement.getAttribute('value') - 8].children[2]);
             }
         }
-        if(movingTarget.getAttribute('id') == 'whiteKing' || movingTarget.getAttribute('id') == 'blackKing' || movingTarget.getAttribute('id') == 'whiteRook' || movingTarget.getAttribute('id') == 'blackRook'){
+        if (movingTarget.getAttribute('id') == 'whiteKing' || movingTarget.getAttribute('id') == 'blackKing' || movingTarget.getAttribute('id') == 'whiteRook' || movingTarget.getAttribute('id') == 'blackRook') {
             movingTarget.dataset.firstMove = '1';
             const tileNum = specialPoint.parentElement.getAttribute('value');
-            if(tileNum == 58){  //퀸 사이드 케슬링
+            if (tileNum == 58) {  //퀸 사이드 케슬링
                 tiles[59].appendChild(tiles[56].children[2]);
             }
-            else if(tileNum == 62){  //킹 사이드 케슬링
+            else if (tileNum == 62) {  //킹 사이드 케슬링
                 tiles[61].appendChild(tiles[63].children[2]);
             }
-            else if(tileNum == 6){
+            else if (tileNum == 6) {
                 tiles[5].appendChild(tiles[7].children[2]);
             }
-            else{
+            else {
                 tiles[3].appendChild(tiles[0].children[2]);
             }
         }
         this.parentNode.appendChild(movingTarget);
-
     }
 }
