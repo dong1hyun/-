@@ -3,6 +3,7 @@ const blackQueen = document.querySelectorAll('#blackQueen');
 
 
 function whiteQueenMove() {
+    if(whiteMessage()) return;  //백 차례가 아니면 종료
     movingTarget = this;
     const tileNum = +this.parentElement.getAttribute('value');
 
@@ -128,6 +129,7 @@ for (i = 0; i < whiteQueen.length; i++) {
 
 
 function blackQueenMove() {
+    if(blackMessage()) return;  //흑 차례가 아니면 종료
     movingTarget = this;
     const tileNum = +this.parentElement.getAttribute('value');
 

@@ -18,10 +18,16 @@ function boardInit() {
                 if (j % 2 != 0) {  //홀수 열만 
                     $div.setAttribute('id', 'greyTile');
                 }
+                else{
+                    $div.setAttribute('id', 'whiteTile');
+                }
             }
             else {  //짝수 행일 때
                 if (j % 2 == 0) {
                     $div.setAttribute('id', 'greyTile');
+                }
+                else{
+                    $div.setAttribute('id', 'whiteTile');
                 }
             }
             $wrapper.appendChild($div);
@@ -135,7 +141,7 @@ function pieceInit() {
     kingInit(4);
 }
 
-(function () {
+(function () {  //승격 선택
     const $body = document.querySelector('body');
     const $div = document.createElement('div');
     $div.setAttribute('id', 'promotion');
@@ -149,7 +155,7 @@ function pieceInit() {
         $div2.appendChild($a);
         $div.appendChild($div2);   
     }
-    promotionSet('PROMOTION', 'title');
+    promotionSet('SELECT', 'title');
     promotionSet('QUEEN', 'queen');
     promotionSet('ROOK', 'rook');
     promotionSet('BISHOP', 'bishop');

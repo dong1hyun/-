@@ -2,6 +2,7 @@ const whiteBishop = document.querySelectorAll('#whiteBishop');
 const blackBishop = document.querySelectorAll('#blackBishop');
 
 function whiteBishopMove() {
+    if(whiteMessage()) return;  //백 차례가 아니면 종료
     movingTarget = this;
     const tileNum = +this.parentElement.getAttribute('value');
 
@@ -75,6 +76,7 @@ for(i = 0; i < whiteBishop.length; i++){
 }
 
 function blackBishopMove() {
+    if(blackMessage()) return;  //흑 차례가 아니면 종료
     movingTarget = this;
     const tileNum = +this.parentElement.getAttribute('value');
 

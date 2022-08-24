@@ -4,6 +4,7 @@ const blackKing = document.querySelectorAll('#blackKing');
 function whiteKingMove() {
     for (i = 0; i < whiteKing.length; i++) {
         whiteKing[i].onclick = function () {
+            if(whiteMessage()) return;  //백 차례가 아니면 종료
             movingTarget = this;
             const tileNum = +this.parentElement.getAttribute('value');
 
@@ -70,6 +71,7 @@ function whiteKingMove() {
 function blackKingMove() {
     for (i = 0; i < blackKing.length; i++) {
         blackKing[i].onclick = function () {
+            if(blackMessage()) return;  //흑 차례가 아니면 종료
             movingTarget = this;
             const tileNum = +this.parentElement.getAttribute('value');
 

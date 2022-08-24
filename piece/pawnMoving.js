@@ -4,6 +4,7 @@ const blackPawn = document.querySelectorAll('#blackPawn');
 function whitePawnMove() {
     for (i = 0; i < whitePawn.length; i++) {
         whitePawn[i].onclick = function () {
+            if(whiteMessage()) return;  //백 차례가 아니면 종료
             movingTarget = this;
             const tileNum = +this.parentElement.getAttribute('value');
 
@@ -62,6 +63,7 @@ function whitePawnMove() {
 function blackPawnMove() {
     for (i = 0; i < blackPawn.length; i++) {
         blackPawn[i].onclick = function () {
+            if(blackMessage()) return;  //흑 차례가 아니면 종료
             movingTarget = this;
             const tileNum = +this.parentElement.getAttribute('value');
 
@@ -117,7 +119,7 @@ function blackPawnMove() {
 
 function pawnMove(movingPoint) {
     if (movingTarget.getAttribute('id') == 'whitePawn' || movingTarget.getAttribute('id') == 'blackPawn') {  //움직이는 말이 아직 이동하지 않은 폰일 때
-        movingTarget.dataset.curMove = ++count;
+        movingTarget.dataset.curMove = count;
         if (movingTarget.dataset.firstMove == '-1') {
             if (Math.abs(movingPoint.parentElement.getAttribute('value') - movingTarget.parentElement.getAttribute('value')) == 8) {
                 movingTarget.dataset.firstMove = '1';  //첫 이동에 한칸 이동
