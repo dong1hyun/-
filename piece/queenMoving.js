@@ -6,7 +6,6 @@ function whiteQueenMove() {
     if(whiteMessage()) return;  //백 차례가 아니면 종료
     movingTarget = this;
     const tileNum = +this.parentElement.getAttribute('value');
-
     secondClick(tileNum);
     if (clicked) {
         clicked = false;

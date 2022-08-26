@@ -8,6 +8,7 @@ body {
 
 #wrapper {
     position: absolute;
+    background-color: #fff;
     top: 30px;
     left: 450px;
     display: grid;
@@ -62,7 +63,7 @@ body {
 }
 
 #wrapper > div:hover {
-    background-color: #000;
+    border: 5px dotted black;
 }
 
 #wrapper > div > img {
