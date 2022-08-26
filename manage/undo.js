@@ -12,6 +12,7 @@ undo.onclick = function() {  //이전 턴으로 되돌림
         return;
     }
     if(movementType == 0){  //케슬링
+        console.log("0");
         movedPiece.dataset.firstMove = -1;
         diedPiece.dataset.firstMove = -1;
         tiles[movedLo].appendChild(movedPiece);
@@ -23,7 +24,12 @@ undo.onclick = function() {  //이전 턴으로 되돌림
     }
     else if(movementType == 2){  //폰의 첫 움직임
         movedPiece.dataset.firstMove = -1;
-        tiles[movedLo].appendChild(movedPiece);
+        if(movedPiece != null){
+            tiles[movedLo].appendChild(movedPiece);
+        }
+        if(diedPiece != null){
+            tiles[diedLo].appendChild(diedPiece);
+        }
     }
     else if(movementType == 3){  //승격
         if(movedPiece.getAttribute('class') == 'whiteTeam'){
